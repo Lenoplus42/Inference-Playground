@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* ── Color tokens ────────────────────────────────────────────────────────── */
+:root {
+  /* Dark theme (default) */
+  --bg-primary:        #0a0f1a;
+  --bg-secondary:      #0d1424;
+  --surface:           #111827;
+  --surface-elevated:  #1a2236;
+  --border:            rgba(255,255,255,0.08);
+  --accent:            #fdb515;
+  --text-primary:      #e5e7eb;
+  --text-secondary:    #9ca3af;
+  --text-muted:        #6b7280;
+}
+
+/* Light mode class for manual toggle */
+:root.light {
+  --bg-primary:        #f9fafb;
+  --bg-secondary:      #f3f4f6;
+  --surface:           #ffffff;
+  --surface-elevated:  #ffffff;
+  --border:            rgba(0,0,0,0.10);
+  --accent:            #d97706;
+  --text-primary:      #111827;
+  --text-secondary:    #374151;
+  --text-muted:        #9ca3af;
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular numbers for metrics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Slim scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+/* Range input custom styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--border);
+  height: 3px;
+  border-radius: 2px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: -3.5px;
+}
+input[type="range"]::-moz-range-track {
+  background: var(--border);
+  height: 3px;
+  border-radius: 2px;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+}
+
+/* Select styling */
+select option {
+  background-color: var(--surface-elevated);
+  color: var(--text-primary);
+}
+
+/* Tutorial cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
