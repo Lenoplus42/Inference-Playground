@@ -170,7 +170,6 @@ function MiniGantt({ currentTick }: GanttProps) {
     // Annotation: Head-of-Line Blocking arrow (batch blocks interactives)
     if (tick >= 58) {
       const batch0PrefillEnd = LABEL_W + 40 * tickScale;
-      const interactive1Complete = LABEL_W + 58 * tickScale;
       const annotY = PAD_TOP + 0 * (ROW_HEIGHT + ROW_GAP) + ROW_HEIGHT + ROW_GAP;
       const annotH = 3 * (ROW_HEIGHT + ROW_GAP);
 
@@ -353,7 +352,7 @@ export default function Section3Gantt() {
               <strong style={{ color: 'var(--text-primary)' }}>Interactive avg TTFT: {avgTTFT} ticks.</strong>
               {' '}Batch request #0 kept interactive requests in the queue for{' '}
               <strong style={{ color: '#ef4444' }}>{totalBlocked} ticks combined</strong>.
-              {' '}This is Head-of-Line Blocking. The playground below lets you switch to MLFQ scheduling to see how priority queues fix this.
+              {' '}This is Head-of-Line Blocking. The playground below lets you experiment with different configurations to see how arrival rate, memory pressure, and scheduling interact.
             </div>
           )}
         </div>

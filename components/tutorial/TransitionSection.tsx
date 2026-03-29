@@ -47,7 +47,7 @@ export default function TransitionSection() {
             margin: '0 0 36px',
           }}
         >
-          Adjust the parameters below. Watch how arrival rate, memory pressure, and scheduling policy interact — and see why MLFQ beats FCFS when request sizes are mixed.
+          Adjust the parameters below. Watch how arrival rate, memory pressure, and scheduling policy interact in ways that are hard to reason about without seeing them.
         </p>
 
         <button
